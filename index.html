@@ -1,55 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Laura Zanella's CV</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your CV</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        h1, h2, h3 { color: #333; }
-        .container { width: 80%; margin: auto; }
-        .section { margin-bottom: 20px; }
-        .experience, .education, .skills, .activities { margin-left: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #4A90E2, #9013FE);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            section {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Laura Zanella</h1>
-        <h2>Curriculum Vitae</h2>
-        <div class="section professional-experience">
-            <h3>Professional Experience</h3>
-            <div class="experience">
-                <p><strong>Job Title - Company Name</strong> (Year - Year)</p>
-                <p>Description of duties and achievements.</p>
-            </div>
-            <div class="experience">
-                <p><strong>Job Title - Company Name</strong> (Year - Year)</p>
-                <p>Description of duties and achievements.</p>
-            </div>
-        </div>
-        <div class="section education">
-            <h3>Education</h3>
-            <div class="education">
-                <p><strong>Degree - Institution Name</strong> (Year)</p>
-            </div>
-            <div class="education">
-                <p><strong>Degree - Institution Name</strong> (Year)</p>
-            </div>
-        </div>
-        <div class="section skills">
-            <h3>Skills</h3>
-            <ul class="skills">
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-                <li>Skill 3</li>
-            </ul>
-        </div>
-        <div class="section scientific-activities">
-            <h3>Scientific Activities</h3>
-            <div class="activities">
-                <p>Details about scientific activities, publications, or research.</p>
-            </div>
-        </div>
-    </div>
+    <header>
+        <h1>Curriculum Vitae</h1>
+        <p>Contact: your.email@example.com | Phone: (123) 456-7890</p>
+    </header>
+    <section id="professional-experience">
+        <h2>Professional Experience</h2>
+        <h3>Doctolib</h3>
+        <p>Role: [Your Job Title]</p>
+        <p>[Details about your responsibilities, achievements, and technologies used]</p>
+        <h3>Posos</h3>
+        <p>Role: [Your Job Title]</p>
+        <p>[Details about your responsibilities, achievements, and technologies used]</p>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <h3>LORIA</h3>
+        <p>[Degree obtained, year]</p>
+        <h3>[Mexican University]</h3>
+        <p>[Degree obtained, year]</p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>NLP/ML frameworks</li>
+            <li>Cloud platforms</li>
+            <li>[Additional skills]</li>
+        </ul>
+    </section>
+    <section id="publications">
+        <h2>Scientific Publications</h2>
+        <ul>
+            <li>ACL</li>
+            <li>LREC</li>
+            <li>CORIA-TALN</li>
+            <li>FedCSIS</li>
+        </ul>
+    </section>
+    <section id="research-collaborations">
+        <h2>Research Collaborations</h2>
+        <p>[Information about collaborations]</p>
+    </section>
+    <section id="awards">
+        <h2>Awards</h2>
+        <p>[Details about awards]</p>
+    </section>
 </body>
 </html>
