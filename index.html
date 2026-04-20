@@ -3,53 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laura Zanella | Data Scientist</title>
+    <title>Your CV</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: linear-gradient(45deg, #6ab0f3, #91eae4); color: white; padding: 20px; text-align: center; }
-        section { margin: 20px; }
-        h1, h2, h3 { color: #333; }
-        ul { list-style-type: none; padding: 0; }
-        .contact, .experience, .education, .skills, .activities, .awards { margin-bottom: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #4A90E2, #9013FE);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
         @media (max-width: 600px) {
-            body { padding: 10px; }
-            header { padding: 15px; }
+            body {
+                padding: 10px;
+            }
+            section {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Laura Zanella</h1>
-        <h2>Data Scientist | NLP & LLM Evaluation | Medical AI</h2>
-        <p>Versailles, France</p>
+        <h1>Curriculum Vitae</h1>
+        <p>Contact: your.email@example.com | GitHub: <a href="https://github.com/laurazanellac">github.com/laurazanellac</a> | Scholar: <a href="https://scholar.google.com/citations?user=laurazanellac">/Laura Zanella</a></p>
     </header>
-    <section class="contact">
-        <h3>Contact</h3>
-        <p>Email: <a href="mailto:laura.zanella14@outlook.com">laura.zanella14@outlook.com</a> | 
-        GitHub: <a href="https://github.com/laurazanellac">github.com/laurazanellac</a> | 
-        Scholar: <a href="https://scholar.google.com/citations?user=laurazanellac">/Laura Zanella</a></p>
+    <section id="professional-experience">
+        <h2>Professional Experience</h2>
+        <h3>Doctolib (11/2025–04/2026)</h3>
+        <p>Data Scientist</p>
+        <p>Participated in workshops with health practitioners, Implemented LLM evaluation scores for medical summary generation, Conducted prompt engineering and AB tests, Launched annotation campaigns, Evaluated Medical Facts Extractor framework, Deployed LLMs via AWS/GCP/ArgoCD.</p>
+        <h3>Posos (04/2024–05/2025)</h3>
+        <p>Data Scientist</p>
+        <p>Fine-tuned BERT-based models for NER, Trained NEL model with new terminologies, Developed REST API for semi-automatic annotation, Deployed SLM models via ArgoCD/GCP, Authored scientific articles on biomedical NLP.</p>
+        <h3>Teaching and Research Assistant (11/2022–08/2023)</h3>
+        <p>Télécom Nancy, LORIA</p>
+        <p>Teaching: AI, C language, Data structures, Assemblers, Data mining.</li></p>
     </section>
-    <section class="experience">
-        <h3>Professional Experience</h3>
-        <ul>
-            <li><strong>Data Scientist - Doctolib (11/2025–current)</strong>: Participated in workshops with health practitioners, Implemented LLM evaluation scores for medical summary generation, Conducted prompt engineering and AB tests, Launched annotation campaigns, Evaluated Medical Facts Extractor framework, Deployed LLMs via AWS/GCP/ArgoCD.</li>
-            <li><strong>Data Scientist - Posos (04/2024–05/2025)</strong>: Fine-tuned BERT-based models for NER, Trained NEL model with new terminologies, Developed REST API for semi-automatic annotation, Deployed SLM models via ArgoCD/GCP, Authored scientific articles on biomedical NLP.</li>
-            <li><strong>Junior Researcher - University of Lorraine LORIA (09/2023–12/2023)</strong></li>
-            <li><strong>Teaching and Research Associate - Télécom Nancy LORIA (11/2022–08/2023)</strong>: 167 hours of teaching AI, C language, Data structures, Assemblers, Data mining.</li>
-            <li><strong>Doctoral Researcher - LORIA (11/2019–10/2022)</strong></li>
-            <li><strong>Internship - Autonomous University of Zacatecas (06/2016–08/2016)</strong>: Breast cancer imaging biomarkers.</li>
-        </ul>
+    <section id="education">
+        <h2>Education</h2>
+        <h3>LORIA</h3>
+        <p>PhD Computer Science, 2023</p>
+        <p>Natural Language Processing, Machine Learning, Thesis on Biomedical Event Extraction.</p>
+        <h3>Autonomous University of Zacatecas</h3>
+        <p>MSc Engineering Science, 2019</p>
+        <p>Digital signal processing, Data Mining.</p>
+        <h3>Autonomous University of San Luis Potosi</h3>
+        <p>Biomedical Engineering, 2017</p>
+        <p>...</p>
     </section>
-    <section class="education">
-        <h3>Education</h3>
-        <ul>
-            <li><strong>PhD Computer Science, LORIA–Université de Lorraine (2019–2023)</strong>: Natural Language Processing, Machine Learning, Thesis on Biomedical Event Extraction.</li>
-            <li><strong>MSc Engineering Science, Autonomous University of Zacatecas (2017–2019)</strong>: Digital signal processing, Data Mining.</li>
-            <li><strong>Degree Biomedical Engineering, Autonomous University of San Luis Potosi (2012–2016)</strong></li>
-        </ul>
-    </section>
-    <section class="skills">
-        <h3>Skills</h3>
+    <section id="skills">
+        <h2>Skills</h2>
         <ul>
             <li><strong>Languages</strong>: English and French (full professional proficiency), Spanish (native).</li>
             <li><strong>Programming</strong>: Python, R.</li>
@@ -59,8 +73,8 @@
             <li><strong>Developer Tools</strong>: ClaudeCode, Cursor, Kili, Jira, Confluence, Datadog.</li>
         </ul>
     </section>
-    <section class="activities">
-        <h3>Scientific Activities (2026-2020)</h3>
+    <section id="publications">
+        <h2>Scientific Publications</h2>
         <ul>
             <li>LREC 2026: Confabulations from ACL Publications dataset.</li>
             <li>CORIA-TALN 2025: Mistral confidence assessment, Automatic Posology Structuration.</li>
@@ -70,13 +84,15 @@
             <li>OxML 2021, ESSLLI 2021, AI Singapore 2020.</li>
         </ul>
     </section>
-    <section class="awards">
-        <h3>Awards</h3>
-        <ul>
-            <li><strong>2019</strong>: Best Project award, InnovaHack 2019 eHealth.</li>
-            <li><strong>2017</strong>: Academic Excellence scholarship CONACYT.</li>
-            <li><strong>2016</strong>: Academic Excellence award, Best performance in Biomedical Engineering.</li>
-        </ul>
+    <section id="research-collaborations">
+        <h2>Research Collaborations</h2>
+        <p>[Information about collaborations]</p>
+    </section>
+    <section id="awards">
+        <h2>Awards</h2>
+        <li><strong>2019</strong>: Best Project award, InnovaHack 2019 eHealth.</li>
+        <li><strong>2017</strong>: Academic Excellence scholarship CONACYT.</li>
+        <li><strong>2016</strong>: Academic Excellence award, Best performance in Biomedical Engineering.</li>
     </section>
 </body>
 </html>
