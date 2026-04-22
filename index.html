@@ -9,59 +9,56 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Inter', sans-serif;
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+  margin: 0;
+  display: flex;
   color: #222;
 }
 
-/* NAVBAR */
-nav {
-  position: sticky;
-  top: 0;
-  background: white;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  z-index: 100;
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  padding: 40px 20px;
+  border-right: 1px solid #eee;
 }
 
-nav a {
-  margin-right: 20px;
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: black;
-}
-
-/* HERO */
-#hero {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-top: 60px;
-  margin-bottom: 80px;
-}
-
-#hero img {
-  width: 140px;
+.sidebar img {
+  width: 100px;
   border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-#hero h1 {
-  font-size: 2.5rem;
+.sidebar h1 {
+  font-size: 1.4rem;
   margin-bottom: 10px;
 }
 
-/* SECTIONS */
+.sidebar p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.nav a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #444;
+}
+
+.nav a:hover {
+  color: black;
+}
+
+/* MAIN CONTENT */
+.content {
+  margin-left: 300px;
+  padding: 40px;
+  max-width: 800px;
+}
+
 section {
   margin-bottom: 60px;
 }
@@ -74,26 +71,14 @@ h2 {
 /* CARDS */
 .card {
   border: 1px solid #eee;
-  border-radius: 10px;
   padding: 20px;
+  border-radius: 10px;
   margin-top: 15px;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-}
-
-/* ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.fade.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateY(-3px);
 }
 
 .date {
@@ -101,143 +86,118 @@ h2 {
   font-size: 0.9rem;
 }
 
-ul {
-  padding-left: 20px;
+/* BUTTON */
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: #222;
+  color: white;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#publications">Publications</a>
-  <a href="#contact">Contact</a>
-</nav>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <img src="images/profile.jpg" alt="Laura">
+  <h1>Laura Zanella</h1>
+  <p>Data Scientist<br>NLP & Medical AI</p>
 
-<!-- HERO -->
-<section id="hero">
-  <img src="images/profile.jpg" alt="Laura Zanella">
-  <div>
-    <h1>Laura Zanella</h1>
-    <p>Data Scientist & NLP Researcher in Medical AI</p>
-    <p>
-      Building reliable AI systems to extract and structure clinical knowledge
-      from medical text using LLMs and machine learning.
-    </p>
+  <div class="nav">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
   </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about" class="fade">
+  <a href="cv.pdf" class="button" download>Download CV</a>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<section id="about">
   <h2>About</h2>
   <p>
-    I am a data scientist working at the intersection of Natural Language Processing
-    and healthcare. My research focuses on structuring medical information from
-    clinical text and improving the reliability of AI systems in real-world settings.
-  </p>
-  <p>
-    I hold a PhD in Computer Science from LORIA, where I worked on biomedical event
-    extraction using transformers and knowledge graphs.
+    I am a data scientist working on Natural Language Processing for healthcare.
+    My research focuses on structuring medical information and building reliable AI systems.
   </p>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="fade">
-  <h2>Selected Projects</h2>
+<section id="projects">
+  <h2>Projects</h2>
 
   <div class="card">
-    <h3>Medical Information Extraction with LLMs</h3>
-    <p>Extraction of structured clinical entities and relations from reports using LLMs.</p>
+    <h3>Medical Information Extraction</h3>
+    <p>LLM-based extraction of structured clinical data.</p>
   </div>
 
   <div class="card">
     <h3>NER + NEL Pipeline</h3>
-    <p>End-to-end system for entity recognition and normalization to medical ontologies.</p>
+    <p>Entity recognition and normalization with medical ontologies.</p>
   </div>
 
-  <div class="card">
-    <h3>LLM Evaluation for Clinical Summaries</h3>
-    <p>Evaluation of factuality and reliability in generated medical text.</p>
-  </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="fade">
+<section id="experience">
   <h2>Experience</h2>
 
   <div class="card">
-    <h3>Data Scientist — Doctolib</h3>
+    <h3>Doctolib</h3>
     <div class="date">2025 – Present</div>
-    <ul>
-      <li>LLM evaluation for clinical summaries</li>
-      <li>Prompt engineering & A/B testing</li>
-      <li>Deployment on AWS, GCP, ArgoCD</li>
-    </ul>
+    <p>LLM evaluation, deployment, prompt engineering.</p>
   </div>
 
   <div class="card">
-    <h3>Data Scientist — Posos</h3>
+    <h3>Posos</h3>
     <div class="date">2024 – 2025</div>
-    <ul>
-      <li>Fine-tuning transformer models for NER</li>
-      <li>Entity linking with SNOMED, LOINC</li>
-      <li>Production API for medical annotation</li>
-    </ul>
+    <p>NER/NEL systems, API development.</p>
+  </div>
+
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+
+  <div class="card">
+    <p>
+      <strong>LREC 2026</strong><br>
+      Confabulations from ACL Publications<br>
+      <a href="#">[PDF]</a> <a href="#">[arXiv]</a>
+    </p>
   </div>
 
   <div class="card">
-    <h3>PhD Researcher — LORIA</h3>
-    <div class="date">2019 – 2023</div>
-    <ul>
-      <li>Biomedical event extraction</li>
-      <li>Transformers + knowledge graphs</li>
-    </ul>
+    <p>
+      <strong>ACL 2023</strong><br>
+      Knowledge Graphs for Biomedical Extraction<br>
+      <a href="#">[PDF]</a>
+    </p>
   </div>
 
 </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications" class="fade">
-  <h2>Publications</h2>
-  <ul>
-    <li>LREC 2026 — Confabulations from ACL Publications</li>
-    <li>CORIA-TALN 2025 — Mistral confidence evaluation</li>
-    <li>ACL 2023 — Knowledge Graphs for Biomedical Extraction</li>
-    <li>FedCSIS 2023 — Linguistic Information in Transformers</li>
-  </ul>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="fade">
+<section id="contact">
   <h2>Contact</h2>
-  <p>Email: laura.zanella14@outlook.com</p>
   <p>
+    laura.zanella14@outlook.com<br>
     <a href="https://github.com/laurazanellac">GitHub</a> |
-    <a href="https://scholar.google.com">Google Scholar</a> |
-    <a href="https://linkedin.com">LinkedIn</a>
+    <a href="#">Scholar</a>
   </p>
 </section>
 
-<!-- ANIMATION SCRIPT -->
-<script>
-const faders = document.querySelectorAll('.fade');
-
-const appearOnScroll = new IntersectionObserver(function(entries) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
-</script>
+</div>
 
 </body>
 </html>
