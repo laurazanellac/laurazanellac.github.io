@@ -1,241 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laura Zanella</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Laura Zanella</title>
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.7;
-      color: #222;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    h1, h2, h3 {
-      font-weight: 600;
-    }
+<style>
+html {
+  scroll-behavior: smooth;
+}
 
-    h1 {
-      font-size: 2.5rem;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  color: #222;
+}
 
-    h2 {
-      margin-top: 60px;
-      font-size: 1.6rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 5px;
-    }
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  z-index: 100;
+}
 
-    p {
-      color: #444;
-    }
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
 
-    a {
-      color: #4A90E2;
-      text-decoration: none;
-    }
+nav a:hover {
+  color: black;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+/* HERO */
+#hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
 
-    /* HERO */
-    #hero {
-      margin-top: 60px;
-      margin-bottom: 80px;
-    }
+#hero img {
+  width: 140px;
+  border-radius: 50%;
+}
 
-    #hero p {
-      font-size: 1.1rem;
-    }
+#hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
 
-    .links {
-      margin-top: 15px;
-    }
+/* SECTIONS */
+section {
+  margin-bottom: 60px;
+}
 
-    .links a {
-      margin-right: 15px;
-    }
+h2 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
 
-    /* CARDS */
-    .card {
-      padding: 20px;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      transition: 0.2s;
-    }
+/* CARDS */
+.card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  transition: 0.3s;
+}
 
-    .card:hover {
-      transform: translateY(-3px);
-    }
+.card:hover {
+  transform: translateY(-4px);
+}
 
-    .date {
-      color: #777;
-      font-size: 0.9rem;
-    }
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
 
-    ul {
-      padding-left: 20px;
-    }
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    li {
-      margin-bottom: 5px;
-    }
-  </style>
+.date {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+ul {
+  padding-left: 20px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section id="hero">
+<!-- NAV -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#publications">Publications</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <img src="images/profile.jpg" alt="Laura Zanella">
+  <div>
     <h1>Laura Zanella</h1>
+    <p>Data Scientist & NLP Researcher in Medical AI</p>
     <p>
-      Data Scientist & NLP Researcher specializing in Medical AI.
+      Building reliable AI systems to extract and structure clinical knowledge
+      from medical text using LLMs and machine learning.
     </p>
-    <p>
-      I design machine learning systems to extract, structure, and leverage
-      clinical information from medical text, with a focus on reliability
-      and real-world healthcare applications.
-    </p>
+  </div>
+</section>
 
-    <div class="links">
-      <a href="mailto:your.email@example.com">Email</a>
-      <a href="https://github.com/laurazanellac">GitHub</a>
-      <a href="https://scholar.google.com/citations?user=laurazanellac">Google Scholar</a>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <h2>About</h2>
+  <p>
+    I am a data scientist working at the intersection of Natural Language Processing
+    and healthcare. My research focuses on structuring medical information from
+    clinical text and improving the reliability of AI systems in real-world settings.
+  </p>
+  <p>
+    I hold a PhD in Computer Science from LORIA, where I worked on biomedical event
+    extraction using transformers and knowledge graphs.
+  </p>
+</section>
 
-  <!-- ABOUT -->
-  <section>
-    <h2>About</h2>
-    <p>
-      I am a data scientist working at the intersection of Natural Language Processing
-      and healthcare. My research focuses on extracting structured medical knowledge
-      from unstructured clinical text and building robust AI systems for clinical decision support.
-    </p>
-    <p>
-      I hold a PhD in Computer Science, where I worked on biomedical event extraction,
-      combining machine learning and linguistic knowledge. I am particularly interested
-      in moving beyond traditional NER towards richer semantic representations of medical data.
-    </p>
-  </section>
+<!-- PROJECTS -->
+<section id="projects" class="fade">
+  <h2>Selected Projects</h2>
 
-  <!-- PROJECTS -->
-  <section>
-    <h2>Selected Projects</h2>
+  <div class="card">
+    <h3>Medical Information Extraction with LLMs</h3>
+    <p>Extraction of structured clinical entities and relations from reports using LLMs.</p>
+  </div>
 
-    <div class="card">
-      <h3>Medical Information Extraction with LLMs</h3>
-      <p>
-        Development of systems to extract structured clinical entities and relations
-        from medical reports using fine-tuned large language models.
-      </p>
-    </div>
+  <div class="card">
+    <h3>NER + NEL Pipeline</h3>
+    <p>End-to-end system for entity recognition and normalization to medical ontologies.</p>
+  </div>
 
-    <div class="card">
-      <h3>Biomedical NER and Entity Linking Pipeline</h3>
-      <p>
-        Design of end-to-end pipelines combining Named Entity Recognition and
-        normalization to medical ontologies, enabling downstream clinical applications.
-      </p>
-    </div>
+  <div class="card">
+    <h3>LLM Evaluation for Clinical Summaries</h3>
+    <p>Evaluation of factuality and reliability in generated medical text.</p>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>LLM Evaluation for Clinical Text Generation</h3>
-      <p>
-        Implementation of evaluation frameworks for assessing the factuality
-        and reliability of generated medical summaries.
-      </p>
-    </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="fade">
+  <h2>Experience</h2>
 
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section>
-    <h2>Experience</h2>
-
-    <div class="card">
-      <h3>Data Scientist — Doctolib</h3>
-      <div class="date">Nov 2025 – Apr 2026</div>
-      <ul>
-        <li>Developed evaluation frameworks for LLM-based medical summaries</li>
-        <li>Conducted prompt engineering and A/B testing</li>
-        <li>Deployed models using GCP, AWS, and ArgoCD</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Data Scientist — Posos</h3>
-      <div class="date">Apr 2024 – May 2025</div>
-      <ul>
-        <li>Fine-tuned transformer models for biomedical NER</li>
-        <li>Developed entity linking systems with medical terminologies</li>
-        <li>Built APIs for annotation workflows</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Teaching & Research Assistant — Télécom Nancy / LORIA</h3>
-      <div class="date">2022 – 2023</div>
-      <ul>
-        <li>Teaching: AI, Data Structures, C programming</li>
-        <li>Research in NLP and biomedical information extraction</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <!-- PUBLICATIONS -->
-  <section>
-    <h2>Publications</h2>
+  <div class="card">
+    <h3>Data Scientist — Doctolib</h3>
+    <div class="date">2025 – Present</div>
     <ul>
-      <li><strong>LREC 2026</strong> — Confabulations from ACL Publications dataset</li>
-      <li><strong>CORIA-TALN 2025</strong> — Mistral confidence assessment</li>
-      <li><strong>ACL 2023</strong> — Knowledge Graphs for Biomedical Event Extraction</li>
-      <li><strong>FedCSIS 2023</strong> — Linguistic Information in Transformer Models</li>
-      <li><strong>EGC 2022</strong> — Biomedical Event Detection</li>
+      <li>LLM evaluation for clinical summaries</li>
+      <li>Prompt engineering & A/B testing</li>
+      <li>Deployment on AWS, GCP, ArgoCD</li>
     </ul>
-  </section>
+  </div>
 
-  <!-- EDUCATION -->
-  <section>
-    <h2>Education</h2>
+  <div class="card">
+    <h3>Data Scientist — Posos</h3>
+    <div class="date">2024 – 2025</div>
+    <ul>
+      <li>Fine-tuning transformer models for NER</li>
+      <li>Entity linking with SNOMED, LOINC</li>
+      <li>Production API for medical annotation</li>
+    </ul>
+  </div>
 
-    <div class="card">
-      <h3>PhD in Computer Science</h3>
-      <p>LORIA — 2023</p>
-    </div>
+  <div class="card">
+    <h3>PhD Researcher — LORIA</h3>
+    <div class="date">2019 – 2023</div>
+    <ul>
+      <li>Biomedical event extraction</li>
+      <li>Transformers + knowledge graphs</li>
+    </ul>
+  </div>
 
-    <div class="card">
-      <h3>MSc Engineering Science</h3>
-      <p>Autonomous University of Zacatecas — 2019</p>
-    </div>
+</section>
 
-    <div class="card">
-      <h3>BSc Biomedical Engineering</h3>
-      <p>Autonomous University of San Luis Potosi — 2017</p>
-    </div>
+<!-- PUBLICATIONS -->
+<section id="publications" class="fade">
+  <h2>Publications</h2>
+  <ul>
+    <li>LREC 2026 — Confabulations from ACL Publications</li>
+    <li>CORIA-TALN 2025 — Mistral confidence evaluation</li>
+    <li>ACL 2023 — Knowledge Graphs for Biomedical Extraction</li>
+    <li>FedCSIS 2023 — Linguistic Information in Transformers</li>
+  </ul>
+</section>
 
-  </section>
+<!-- CONTACT -->
+<section id="contact" class="fade">
+  <h2>Contact</h2>
+  <p>Email: laura.zanella14@outlook.com</p>
+  <p>
+    <a href="https://github.com/laurazanellac">GitHub</a> |
+    <a href="https://scholar.google.com">Google Scholar</a> |
+    <a href="https://linkedin.com">LinkedIn</a>
+  </p>
+</section>
 
-  <!-- SKILLS -->
-  <section>
-    <h2>Skills</h2>
-    <p>
-      <strong>Languages:</strong> English, French (professional), Spanish (native)<br>
-      <strong>Programming:</strong> Python, R<br>
-      <strong>ML/NLP:</strong> PyTorch, Transformers, SpaCy, scikit-learn<br>
-      <strong>Infrastructure:</strong> Docker, Kubernetes, GCP, AWS<br>
-    </p>
-  </section>
+<!-- ANIMATION SCRIPT -->
+<script>
+const faders = document.querySelectorAll('.fade');
+
+const appearOnScroll = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
 
 </body>
 </html>
