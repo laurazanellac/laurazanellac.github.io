@@ -175,6 +175,32 @@ section {
   background: var(--surface);
 }
 
+.institution {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.teaching-list {
+  margin-top: var(--space-md);
+}
+
+.teaching-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.teaching-item:last-child {
+  border-bottom: none;
+}
+
+.teaching-item span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 /* ================= META ================= */
 
 .date {
@@ -219,12 +245,12 @@ section {
 
 <!-- NAV -->
 <nav>
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#experience">Experience</a>
+  <a href="#about">About me</a>
+  <a href="#research">Research Interests</a>
+  <a href="#experience">Professional Experience</a>
+   <a href="#teaching">Teaching</a>
   <a href="#publications">Publications</a>
-  <a href="#research_activities">Activities</a>
-  <a href="#contact">Contact</a>
+  <a href="#research_activities">Scientific Activities</a>
 </nav>
 
 <!-- HERO -->
@@ -232,14 +258,19 @@ section {
   <img src="images/profile.jpg">
   <div>
     <h1>Laura Zanella</h1>
-    <p>Postdoctoral Researcher at <a href="https://www.lisn.upsaclay.fr/">LISN</a></p>
-    <p>NLP Research in Medical AI</p>
+    <p>Postdoctoral Researcher at <a href="https://www.lisn.upsaclay.fr/">LISN, Paris Saclay</a> | NLP Research in Medical AI</p>
+    <p>laura.zanella14[at]outlook.com</p>
+    <p>
+      <a href="https://github.com/laurazanellac">GitHub</a> |
+      <a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a> |
+      <a href="https://www.linkedin.com/in/laura-zanella/">LinkedIn</a>
+    </p>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="fade">
-  <h2>About</h2>
+  <h2>About me</h2>
   <p>
     My research lies at the intersection of Natural Language Processing and healthcare,
     focusing on the extraction and structuring of clinical information from unstructured text,
@@ -297,6 +328,7 @@ section {
       </p>
     </div>
   </div>
+    <p> This research investigates the use of LLMs for clinical text processing, with a particular focus on their applicability to information extraction and generation tasks. Key questions include how to effectively prompt LLMs for clinical applications, the role of external knowledge and contextual information, and the extent to which these models can be reliably deployed in practice. </p> <p> A central aspect of this work is the evaluation of LLM outputs: designing robust evaluation frameworks that combine quantitative metrics and qualitative analysis, exploring the use of LLMs as evaluators (LLM-as-a-judge), and addressing challenges related to calibration, uncertainty estimation, and bias. Particular attention is given to the construction of reliable ground truth data in clinical settings, where annotation is costly and inherently complex. </p>
 </div>
   
   <div class="card research-card">
@@ -337,15 +369,16 @@ section {
       </p>
     </div>
   </div>
+    <p> This line of research focuses on the extraction of structured information from biomedical and clinical texts, including tasks such as named entity recognition, relation extraction, and normalization to medical ontologies. It considers a variety of data sources, ranging from scientific literature to electronic health records and medical prescriptions, each with distinct linguistic and domain-specific challenges. </p> <p> The work explores the use of different modeling approaches, including transformer-based architectures, large language models, and knowledge graph integration. It also investigates the contribution of linguistic features—lexical, syntactic, and semantic—to improve extraction performance. A key objective is to better understand what types of information can be reliably extracted, under which conditions, and with what level of accuracy for downstream clinical use. </p>
 </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="fade">
-  <h2>Experience</h2>
+  <h2>Professional Experience</h2>
 
   <div class="card">
-    <h3>Post-doctoral Researcher — <a href="https://www.lisn.upsaclay.fr/">LISN</a></p> </h3>
+    <h3>Post-doctoral Researcher — <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris-Saclay</p> </h3>
     <div class="date">04/2026 – current</div>
     <ul>
       <li>Participation in the <a href="https://www.health-data-hub.fr/actualites/democratiser-lia-generative-en-sante-letat-travers-france-2030-selectionne-le-projet">PARTAGES</a> project</li>
@@ -375,14 +408,6 @@ section {
   </div>
 
   <div class="card">
-    <h3>Temporary Teaching and Research Associate — Télécom Nancy, <a href="https://www.loria.fr/en/">LORIA</a> </h3>
-    <div class="date">11/2022 – 08/2023</div>
-    <ul>
-      <li>Teaching in Artificial Intelligence, C Programming, Data Structures, Assembly, and Data Mining.</li>
-    </ul>
-  </div>
-
-  <div class="card">
     <h3>PhD Researcher — <a href="https://www.loria.fr/en/">LORIA</a> (Université de Lorraine, CNRS, Inria)</h3>
     <div class="date">11/2019 – 12/2023</div>
     <ul>
@@ -393,9 +418,56 @@ section {
 
 </section>
 
+<!-- TEACHING -->
+<section id="teaching" class="fade">
+  <h2>Teaching</h2>
+ <div class="card">
+  <h3>Temporary Teaching and Research Associate</h3>
+  
+  <p class="institution">
+    Télécom Nancy — 
+    <a href="https://www.loria.fr/en/">LORIA (Université de Lorraine, CNRS, Inria)</a>
+  </p>
+
+  <div class="date">Nov 2022 – Aug 2023</div>
+
+  <div class="teaching-list">
+
+    <div class="teaching-item">
+      <strong>Artificial Intelligence</strong>
+      <span>TP: 4h • 2nd year</span>
+    </div>
+
+    <div class="teaching-item">
+      <strong>C Programming</strong>
+      <span>TD: 24h • TP: 2h • 1st year</span>
+    </div>
+
+    <div class="teaching-item">
+      <strong>Data Structures</strong>
+      <span>TD: 40h • TP: 4h • 1st year</span>
+    </div>
+
+    <div class="teaching-item">
+      <strong>Assembly</strong>
+      <span>TP: 14h • 1st year</span>
+    </div>
+
+    <div class="teaching-item">
+      <strong>Data Mining & Knowledge Extraction</strong>
+      <span>CM: 15h • TD: 50h • TP: 12h • 3rd year</span>
+    </div>
+
+  </div>
+</div>
+</section>
+
 <!-- PUBLICATIONS -->
 <section id="publications" class="fade">
   <h2>Publications</h2>
+   <ul>
+      <li><h2>2025</h2></li>
+    </ul>
   <div class="card">
     <h3><a href="https://arxiv.org/abs/2510.22395">Confabulations from ACL Publications (CAP): A Dataset for Scientific Hallucination Detection</a></h3>
     <p>15th Language Resources and Evaluation Conference (LREC)</p>
@@ -408,6 +480,9 @@ section {
     <h3><a href="https://aclanthology.org/2025.jeptalnrecital-taln.28.pdf">Is Mistral’s Confidence Justified? Assessing Self-Evaluation in Biomedical QA</a></h3>
     <p>32nd CORIA-TALN</p>
   </div>
+  <ul>
+      <li><h2>2023</h2></li>
+    </ul>
   <div class="card">
     <h3><a href="https://aclanthology.org/2023.bionlp-1.12/">How Much do Knowledge Graphs Impact Transformer Models for Extracting Biomedical
 Events?</a></h3>
@@ -456,17 +531,6 @@ Events?</a></h3>
     </p>
   </div>
 
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="fade">
-  <h2>Contact</h2>
-  <p>laura.zanella14[at]outlook.com</p>
-  <p>
-    <a href="https://github.com/laurazanellac">GitHub</a> |
-    <a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a> |
-    <a href="https://www.linkedin.com/in/laura-zanella/">LinkedIn</a>
-  </p>
 </section>
 
 <script>
