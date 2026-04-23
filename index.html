@@ -114,18 +114,65 @@ nav a.active {
   box-shadow: inset 0 -2px 0 var(--accent);
 }
 
-/* ================= HERO ================= */
+/* ================= LAYOUT ================= */
 
-#hero {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xl);
-  margin: var(--space-xl) 0 var(--space-2xl);
+.page-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
 }
 
-#hero img {
-  width: 140px;
+.sidebar {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+  padding: var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg);
+}
+
+.sidebar img {
+  width: 100%;
+  max-width: 240px;
   border-radius: 50%;
+  display: block;
+  margin-bottom: var(--space-lg);
+}
+
+.sidebar h1 {
+  margin-bottom: var(--space-sm);
+  font-size: 2rem;
+}
+
+.sidebar p {
+  margin: var(--space-sm) 0;
+}
+
+.sidebar-links {
+  margin-top: var(--space-md);
+}
+
+.sidebar-links a {
+  display: inline-block;
+  margin-right: var(--space-md);
+}
+
+.content {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .page-layout {
+    display: block;
+  }
+
+  .sidebar {
+    position: static;
+    top: auto;
+    margin-bottom: var(--space-2xl);
+  }
 }
 
 /* ================= SECTIONS ================= */
@@ -277,23 +324,24 @@ section {
   <a href="#research_activities">Scientific Activities</a>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <img src="images/profile.jpg">
-  <div>
+<div class="page-layout">
+  <aside class="sidebar">
+    <img src="images/profile.jpg" alt="Laura Zanella">
     <h1>Laura Zanella</h1>
-    <p>Postdoctoral Researcher at <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris Saclay | NLP Research in Medical AI</p>
+    <p>Postdoctoral Researcher at <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris Saclay</p>
+    <p>NLP Research in Medical AI</p>
     <p>laura.zanella14[at]outlook.com</p>
-    <p>
-      <a href="https://github.com/laurazanellac">GitHub</a> |
-      <a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a> |
+    <p class="sidebar-links">
+      <a href="https://github.com/laurazanellac">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a>
       <a href="https://www.linkedin.com/in/laura-zanella/">LinkedIn</a>
     </p>
-  </div>
-</section>
+  </aside>
 
-<!-- ABOUT -->
-<section id="about" class="fade">
+  <main class="content">
+
+  <!-- ABOUT -->
+  <section id="about" class="fade">
   <h2>About me</h2>
   <p>
           I am currently a postdoctoral researcher at LISN (Université Paris-Saclay),
@@ -570,6 +618,9 @@ section {
   </div>
 
 </section>
+
+  </main>
+</div>
 
 <script>
 const faders = document.querySelectorAll('.fade');
