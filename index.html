@@ -152,6 +152,7 @@ nav a.active {
 
 .sidebar-links {
   margin-top: var(--space-md);
+  white-space: nowrap;
 }
 
 .sidebar-links a {
@@ -329,11 +330,13 @@ section {
     <img src="images/profile.jpg" alt="Laura Zanella">
     <h1>Laura Zanella</h1>
     <p>Postdoctoral Researcher</p>
-    <p><a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris Saclay</p>
+    <p><a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris-Saclay</p>
     <p>NLP Research in Medical AI</p>
     <p>laura.zanella14[at]outlook.com</p>
     <p class="sidebar-links">
-      <a href="https://github.com/laurazanellac">GitHub</a>|<a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a>|<a href="https://www.linkedin.com/in/laura-zanella/">LinkedIn</a>
+      <a href="https://github.com/laurazanellac">GitHub</a> |
+      <a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a> |
+      <a href="https://www.linkedin.com/in/laura-zanella/">LinkedIn</a>
     </p>
   </aside>
 
@@ -641,29 +644,24 @@ const setActiveLink = (id) => {
   });
 };
 
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    entry.target.dataset.visible = entry.isIntersecting;
-    entry.target.dataset.ratio = entry.intersectionRatio;
+const updateActiveSection = () => {
+  const scrollY = window.scrollY + window.innerHeight / 2;
+  let currentSection = null;
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = window.scrollY + rect.top;
+    const sectionBottom = sectionTop + rect.height;
+    if (scrollY >= sectionTop && scrollY < sectionBottom) {
+      currentSection = section;
+    }
   });
-
-  const visibleSections = Array.from(sections)
-    .filter(section => section.dataset.visible === 'true')
-    .sort((a, b) => Number(b.dataset.ratio) - Number(a.dataset.ratio));
-
-  if (visibleSections.length > 0) {
-    setActiveLink(visibleSections[0].id);
+  if (currentSection) {
+    setActiveLink(currentSection.id);
   }
-}, {
-  rootMargin: '-50% 0px -50% 0px',
-  threshold: [0.1, 0.25, 0.5, 0.75, 1],
-});
+};
 
-sections.forEach(section => sectionObserver.observe(section));
-
-if (!document.querySelector('nav a.active') && sectionLinks.length > 0) {
-  sectionLinks[0].classList.add('active');
-}
+window.addEventListener('scroll', updateActiveSection);
+updateActiveSection(); // Initial call
 </script>
 
 </body>
