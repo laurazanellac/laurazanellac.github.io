@@ -108,6 +108,11 @@ nav a:hover {
   color: var(--text);
 }
 
+nav a.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 /* ================= HERO ================= */
 
 #hero {
@@ -126,6 +131,7 @@ nav a:hover {
 
 section {
   margin-bottom: var(--space-2xl);
+  scroll-margin-top: 90px;
 }
 
 /* ================= CARDS ================= */
@@ -557,6 +563,25 @@ const observer = new IntersectionObserver(entries => {
   });
 });
 faders.forEach(el => observer.observe(el));
+
+const sectionLinks = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('section[id]');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const id = entry.target.id;
+    const link = document.querySelector(`nav a[href="#${id}"]`);
+    if (!link) return;
+
+    if (entry.isIntersecting) {
+      sectionLinks.forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, {
+  rootMargin: '-45% 0px -55% 0px',
+  threshold: 0.1,
+});
+sections.forEach(section => sectionObserver.observe(section));
 </script>
 
 </body>
