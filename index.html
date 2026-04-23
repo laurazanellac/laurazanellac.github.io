@@ -107,6 +107,34 @@ h2 {
   color: #444;
 }
 
+  .activity-card {
+  border-left: 3px solid #222;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background: #fafafa;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.activity-card:hover {
+  background: #f2f2f2;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.role {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.event {
+  font-size: 0.85rem;
+  color: #777;
+}
 /* ANIMATION */
 .fade {
   opacity: 0;
@@ -300,7 +328,7 @@ ul {
   </div>
 
   <div class="card">
-    <h3>PhD Researcher — LORIA (Université de Lorraine, CNRS, Inria)</h3>
+    <h3>PhD Researcher — <a href="https://www.loria.fr/en/">LORIA</a> (Université de Lorraine, CNRS, Inria)</h3>
     <div class="date">11/2019 – 12/2023</div>
     <ul>
       <li>Domain: Natural Language Processing, Machine Learning, Biomedical Information Extraction</li>
@@ -343,14 +371,40 @@ Events?</a></h3>
 <!-- SCIENTIFIC ACTIVITIES -->
 <section id="research_activities" class="fade">
   <h2>Scientific Activities</h2>
-  <div class="card">
-  <ul>
-      <li>Co-organization of the <a href="https://atelier-tal-sante.github.io/">TAL@Santé workshop</a> (CORIA-TALN 2026)</li>
-      <li>Co-organization of the <a href="https://atilf-umr7118.github.io/MLPLLM2025/">MLP-LLM</a>a workshop (CORIA-TALN 2025)</li>
-      <li>Participation in the scientific committee and the data annotation of the <a href="https://aclanthology.org/2025.chomps-main.7.pdf">SHROOM-CAP</a> shared task (CHOMPS / AACL-IJCNLP 2025)</li>
-    </ul>
+
+  <div class="activity-card">
+    <div class="activity-header">
+      <span class="role">Co-organizer</span>
+      <span class="event">CORIA-TALN 2026</span>
     </div>
-  </section>
+    <p>
+      <a href="https://atelier-tal-sante.github.io/">TAL@Santé Workshop</a>
+    </p>
+  </div>
+
+  <div class="activity-card">
+    <div class="activity-header">
+      <span class="role">Co-organizer</span>
+      <span class="event">CORIA-TALN 2025</span>
+    </div>
+    <p>
+      <a href="https://atilf-umr7118.github.io/MLPLLM2025/">MLP-LLM Workshop</a>
+    </p>
+  </div>
+
+  <div class="activity-card">
+    <div class="activity-header">
+      <span class="role">Scientific Committee & Annotation</span>
+      <span class="event">AACL-IJCNLP 2025</span>
+    </div>
+    <p>
+      <a href="https://aclanthology.org/2025.chomps-main.7.pdf">
+        SHROOM-CAP Shared Task
+      </a>
+    </p>
+  </div>
+
+</section>
   
 <!-- CONTACT -->
 <section id="contact" class="fade">
