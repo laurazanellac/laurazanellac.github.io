@@ -23,6 +23,8 @@
 
   --accent: #3b82f6;
 
+  --sidebar-width: 260px;
+
   --space-xs: 6px;
   --space-sm: 10px;
   --space-md: 16px;
@@ -38,22 +40,99 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: 'Inter', sans-serif;
-  max-width: 1000px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ================= LAYOUT ================= */
+
+.layout {
+  display: flex;
+  max-width: 1200px;
   margin: auto;
   padding: 20px;
-  font-size: 15px;
-  line-height: 1.7;
+  gap: 40px;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: var(--sidebar-width);
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  height: fit-content;
+  border-right: 1px solid var(--border);
+  padding-right: 20px;
+}
+
+.sidebar img {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.sidebar h1 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+.sidebar p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 6px 0;
+}
+
+.sidebar a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* ================= CONTENT ================= */
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ================= NAV ================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+nav a {
+  margin-right: 18px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+nav a:hover {
   color: var(--text);
+}
+
+nav a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
 }
 
 /* ================= TYPOGRAPHY ================= */
 
-h1 {
-  font-size: 2.4rem;
-  font-weight: 600;
-}
-
+h1 { font-size: 2.2rem; font-weight: 600; }
 h2 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -62,10 +141,7 @@ h2 {
   border-bottom: 1px solid var(--border);
 }
 
-h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
+h3 { font-size: 1.1rem; font-weight: 600; }
 
 h4 {
   font-size: 0.95rem;
@@ -76,50 +152,6 @@ h4 {
 p {
   color: var(--text-secondary);
   margin: 6px 0;
-}
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ================= NAV ================= */
-
-nav {
-  position: sticky;
-  top: 0;
-  background: white;
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid var(--border);
-  z-index: 100;
-}
-
-nav a {
-  margin-right: var(--space-lg);
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: var(--text);
-}
-
-/* ================= HERO ================= */
-
-#hero {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xl);
-  margin: var(--space-xl) 0 var(--space-2xl);
-}
-
-#hero img {
-  width: 140px;
-  border-radius: 50%;
 }
 
 /* ================= SECTIONS ================= */
@@ -144,13 +176,7 @@ section {
   box-shadow: 0 6px 16px rgba(0,0,0,0.04);
 }
 
-/* ================= RESEARCH ================= */
-
-.research-card .highlight {
-  margin: var(--space-sm) 0 var(--space-md);
-  font-weight: 500;
-  color: var(--text);
-}
+/* ================= GRID ================= */
 
 .grid {
   display: grid;
@@ -159,10 +185,6 @@ section {
 }
 
 /* ================= TAGS ================= */
-
-.tags {
-  margin-bottom: var(--space-md);
-}
 
 .tags span {
   display: inline-block;
@@ -175,14 +197,7 @@ section {
   background: var(--surface);
 }
 
-.institution {
-  color: var(--text-secondary);
-  margin-bottom: var(--space-sm);
-}
-
-.teaching-list {
-  margin-top: var(--space-md);
-}
+/* ================= TEACHING ================= */
 
 .teaching-item {
   display: flex;
@@ -190,39 +205,6 @@ section {
   padding: 6px 0;
   border-bottom: 1px solid var(--border);
   font-size: 0.9rem;
-}
-
-.teaching-item:last-child {
-  border-bottom: none;
-}
-
-.teaching-item span {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-/* ================= META ================= */
-
-.date {
-  color: var(--muted);
-  font-size: 0.85rem;
-  margin-bottom: var(--space-sm);
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: var(--space-xs);
-}
-
-.role {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.event {
-  font-size: 0.85rem;
-  color: var(--muted);
 }
 
 /* ================= ANIMATION ================= */
@@ -238,317 +220,125 @@ section {
   transform: translateY(0);
 }
 
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    position: relative;
+    top: auto;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#about">About me</a>
-  <a href="#research">Research Interests</a>
-  <a href="#experience">Professional Experience</a>
-   <a href="#teaching">Teaching</a>
-  <a href="#publications">Publications</a>
-  <a href="#research_activities">Scientific Activities</a>
-</nav>
+<div class="layout">
 
-<!-- HERO -->
-<section id="hero">
-  <img src="images/profile.jpg">
-  <div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <img src="images/profile.jpg" alt="profile">
     <h1>Laura Zanella</h1>
-    <p>Postdoctoral Researcher at <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris Saclay| NLP Research in Medical AI</p>
-    <p>laura.zanella14[at]outlook.com</p>
-    <p>
-      <a href="https://github.com/laurazanellac">GitHub</a> |
-      <a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a> |
+
+    <p>Postdoctoral Researcher</p>
+    <p><a href="https://www.lisn.upsaclay.fr/">LISN, Paris-Saclay</a></p>
+    <p>NLP & Medical AI</p>
+
+    <p style="margin-top:10px;">laura.zanella14[at]outlook.com</p>
+
+    <p style="margin-top:15px;">
+      <a href="https://github.com/laurazanellac">GitHub</a><br>
+      <a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a><br>
       <a href="https://www.linkedin.com/in/laura-zanella/">LinkedIn</a>
     </p>
-  </div>
-</section>
+  </aside>
 
-<!-- ABOUT -->
-<section id="about" class="fade">
-  <h2>About me</h2>
-  <p>
-          I am currently a postdoctoral researcher at LISN (Université Paris-Saclay),
-          working on the evaluation and deployment of large language models for clinical applications.
-        </p>
-  <p>
-        My research lies at the intersection of Natural Language Processing and healthcare,
-        with a focus on the extraction and structuring of clinical information from unstructured text,
-        and on ensuring the reliability and trustworthiness of AI systems in real-world clinical applications.
-      </p>
+  <!-- CONTENT -->
+  <main class="content">
 
-      <p>
-        I am particularly interested in the evaluation of large language models in clinical contexts,
-        the design of robust benchmarks, and the development of methods that combine linguistic knowledge,
-        statistical learning, and domain expertise.
-      </p>
+    <!-- NAV -->
+    <nav id="navbar">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#publications">Publications</a>
+      <a href="#research_activities">Activities</a>
+    </nav>
 
-      
-</section>
+    <!-- ABOUT -->
+    <section id="about" class="fade">
+      <h2>About me</h2>
+      <p>I am currently a postdoctoral researcher at LISN (Université Paris-Saclay), working on LLMs for clinical applications.</p>
+    </section>
 
-<!-- RESEARCH -->
-<section id="research" class="fade">
-  <h2>Research Interests</h2>
+    <!-- RESEARCH -->
+    <section id="research" class="fade">
+      <h2>Research Interests</h2>
 
-  <div class="tags">
-    <span>Biomedical NLP</span>
-    <span>Information Extraction</span>
-    <span>Clinical Text Generation</span>
-    <span>LLM Evaluation</span>
-  </div>
+      <div class="tags">
+        <span>Biomedical NLP</span>
+        <span>Information Extraction</span>
+        <span>Clinical Text Generation</span>
+        <span>LLM Evaluation</span>
+      </div>
+    </section>
 
-  <div class="card research-card">
-  <h3>Evaluation of LLMs for Clinical Text Processing</h3>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="fade">
+      <h2>Professional Experience</h2>
 
-  <p class="highlight">
-    Understanding how and when LLMs can be reliably used for clinical information extraction and generation.
-  </p>
+      <div class="card">
+        <h3>Post-doc — LISN</h3>
+        <p class="date">2026 – now</p>
+      </div>
+    </section>
 
-  <div class="grid">
-    <div>
-      <h4>Model Usage</h4>
-      <p>
-        Applicability of LLMs to information extraction and generation tasks,
-        including prompt design and the role of external knowledge and context.
-      </p>
-    </div>
+    <!-- TEACHING -->
+    <section id="teaching" class="fade">
+      <h2>Teaching</h2>
+      <div class="card">
+        <h3>ATER — Télécom Nancy</h3>
+      </div>
+    </section>
 
-    <div>
-      <h4>Evaluation</h4>
-      <p>
-        Design of robust evaluation frameworks combining quantitative metrics
-        and qualitative analysis, including LLM-as-a-judge approaches.
-      </p>
-    </div>
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="fade">
+      <h2>Publications</h2>
+      <div class="card">...</div>
+    </section>
 
-    <div>
-      <h4>Reliability</h4>
-      <p>
-        Calibration, uncertainty estimation, and bias analysis in clinical settings.
-      </p>
-    </div>
+    <!-- ACTIVITIES -->
+    <section id="research_activities" class="fade">
+      <h2>Scientific Activities</h2>
+      <div class="card">...</div>
+    </section>
 
-    <div>
-      <h4>Data</h4>
-      <p>
-        Construction of reliable ground truth datasets in complex and costly
-        clinical annotation environments.
-      </p>
-    </div>
-  </div>
-    <h4>Description</h4>
-    <p  class="highlight"> This research investigates the use of LLMs for clinical text processing, with a particular focus on their applicability to information extraction and generation tasks. Key questions include how to effectively prompt LLMs for clinical applications, the role of external knowledge and contextual information, and the extent to which these models can be reliably deployed in practice. </p> <p> A central aspect of this work is the evaluation of LLM outputs: designing robust evaluation frameworks that combine quantitative metrics and qualitative analysis, exploring the use of LLMs as evaluators (LLM-as-a-judge), and addressing challenges related to calibration, uncertainty estimation, and bias. Particular attention is given to the construction of reliable ground truth data in clinical settings, where annotation is costly and inherently complex. </p>
+  </main>
 </div>
-  
-  <div class="card research-card">
-  <h3>Information Extraction in the Biomedical Domain</h3>
-
-  <p class="highlight">
-    Extracting structured clinical knowledge from heterogeneous biomedical texts.
-  </p>
-
-  <div class="grid">
-    <div>
-      <h4>Tasks</h4>
-      <p>
-        Named entity recognition, relation extraction, and normalization to
-        medical ontologies.
-      </p>
-    </div>
-
-    <div>
-      <h4>Data Sources</h4>
-      <p>
-        Scientific literature, electronic health records, and medical prescriptions,
-        each with different linguistic challenges.
-      </p>
-    </div>
-
-    <div>
-      <h4>Models</h4>
-      <p>
-        Transformer-based architectures, LLMs, and knowledge graph integration.
-      </p>
-    </div>
-
-    <div>
-      <h4>Linguistics</h4>
-      <p>
-        Leveraging lexical, syntactic, and semantic features to improve extraction performance.
-      </p>
-    </div>
-  </div>
-    <h4>Description</h4>
-    <p  class="highlight"> This line of research focuses on the extraction of structured information from biomedical and clinical texts, including tasks such as named entity recognition, relation extraction, and normalization to medical ontologies. It considers a variety of data sources, ranging from scientific literature to electronic health records and medical prescriptions, each with distinct linguistic and domain-specific challenges. </p> <p> The work explores the use of different modeling approaches, including transformer-based architectures, large language models, and knowledge graph integration. It also investigates the contribution of linguistic features—lexical, syntactic, and semantic—to improve extraction performance. A key objective is to better understand what types of information can be reliably extracted, under which conditions, and with what level of accuracy for downstream clinical use. </p>
-</div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="fade">
-  <h2>Professional Experience</h2>
-
-  <div class="card">
-    <h3>Post-doctoral Researcher — <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris-Saclay</p> </h3>
-    <div class="date">04/2026 – current</div>
-    <ul>
-      <li>Participation in the <a href="https://www.health-data-hub.fr/actualites/democratiser-lia-generative-en-sante-letat-travers-france-2030-selectionne-le-projet">PARTAGES</a> project</li>
-      <li>LLM evaluation for different clinical use cases</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Data Scientist — Doctolib</h3>
-    <div class="date">11/2025 – 03/2026</div>
-    <ul>
-      <li>LLM evaluation for clinical summaries</li>
-      <li>Prompt engineering & A/B testing</li>
-      <li>Annotation campaigns for clinical data</li>
-      <li>Deployment on AWS, GCP, ArgoCD</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Data Scientist — Posos</h3>
-    <div class="date">04/2024 – 05/2025</div>
-    <ul>
-      <li>Fine-tuning transformer models for NER</li>
-      <li>Entity linking with medical terminologies (e.g. SNOMED, LOINC)</li>
-      <li>Production API for medical annotation</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>PhD Researcher — <a href="https://www.loria.fr/en/">LORIA</a> (Université de Lorraine, CNRS, Inria)</h3>
-    <div class="date">11/2019 – 12/2023</div>
-    <ul>
-      <li>Domain: Natural Language Processing, Machine Learning, Biomedical Information Extraction</li>
-      <li>Thesis: <a href="https://theses.hal.science/tel-04516694v1"> Biomedical Event Extraction based on Transformers and Knowledge Graphs</a></li>
-    </ul>
-  </div>
-
-</section>
-
-<!-- TEACHING -->
-<section id="teaching" class="fade">
-  <h2>Teaching</h2>
- <div class="card">
-  <h3>Temporary Teaching and Research Associate</h3>
-  
-  <p class="institution">
-    Télécom Nancy — 
-    <a href="https://www.loria.fr/en/">LORIA</a> (Université de Lorraine, CNRS, Inria)
-  </p>
-
-  <div class="date">Nov 2022 – Aug 2023</div>
-
-  <div class="teaching-list">
-
-    <div class="teaching-item">
-      <strong>Artificial Intelligence</strong>
-      <span>TP: 4h • 2nd year</span>
-    </div>
-
-    <div class="teaching-item">
-      <strong>C Programming</strong>
-      <span>TD: 24h • TP: 2h • 1st year</span>
-    </div>
-
-    <div class="teaching-item">
-      <strong>Data Structures</strong>
-      <span>TD: 40h • TP: 4h • 1st year</span>
-    </div>
-
-    <div class="teaching-item">
-      <strong>Assembly</strong>
-      <span>TP: 14h • 1st year</span>
-    </div>
-
-    <div class="teaching-item">
-      <strong>Data Mining & Knowledge Extraction</strong>
-      <span>CM: 15h • TD: 50h • TP: 12h • 3rd year</span>
-    </div>
-
-  </div>
-</div>
-</section>
-
-<!-- PUBLICATIONS -->
-<section id="publications" class="fade">
-  <h2>Publications</h2>
-   <ul>
-      <li><h2>2025</h2></li>
-    </ul>
-  <div class="card">
-    <h3><a href="https://arxiv.org/abs/2510.22395">Confabulations from ACL Publications (CAP): A Dataset for Scientific Hallucination Detection</a></h3>
-    <p>15th Language Resources and Evaluation Conference (LREC)</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://arxiv.org/abs/2506.19525">Automatic Posology Structuration: What role for LLMs?</a></h3>
-    <p>32nd MLP-LLM / CORIA-TALN</p>
-  </div>
- <div class="card">
-    <h3><a href="https://aclanthology.org/2025.jeptalnrecital-taln.28.pdf">Is Mistral’s Confidence Justified? Assessing Self-Evaluation in Biomedical QA</a></h3>
-    <p>32nd CORIA-TALN</p>
-  </div>
-  <ul>
-      <li><h2>2023</h2></li>
-    </ul>
-  <div class="card">
-    <h3><a href="https://aclanthology.org/2023.bionlp-1.12/">How Much do Knowledge Graphs Impact Transformer Models for Extracting Biomedical
-Events?</a></h3>
-    <p>61st Annual Meeting of the Association for Computational Linguistics (ACL)</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://hal.science/hal-04197974v1/file/FedCSIS_2023.pdf">Adding Linguistic Information to Transformer Models Improves Biomedical Event Detection?</a></h3>
-    <p>18th Conference on Computer Science and Intelligence Systems (FedCSIS)</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://hal.science/hal-03984783/document">Fine-tuning Pre-trained Transformer Language Models for Biomedical Event Trigger Detection</a></h3>
-    <p>DL4NLP - Extraction et Gestion de Connaissances (EGC)</p>
-  </div>
-
-</section>
-
-<!-- ACTIVITIES -->
-<section id="research_activities" class="fade">
-  <h2>Scientific Activities</h2>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="role">Co-organizer</span>
-      <span class="event">CORIA-TALN 2026</span>
-    </div>
-    <p> <a href="https://atelier-tal-sante.github.io/">TAL@Santé Workshop</a></p>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="role">Co-organizer</span>
-      <span class="event">CORIA-TALN 2025</span>
-    </div>
-    <p><a href="https://atilf-umr7118.github.io/MLPLLM2025/">MLP-LLM Workshop</a></p>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="role">Scientific Committee & Annotation</span>
-      <span class="event">AACL-IJCNLP 2025</span>
-    </div>
-    <p>
-      <a href="https://aclanthology.org/2025.chomps-main.7.pdf">
-        SHROOM-CAP Shared Task
-      </a>
-    </p>
-  </div>
-
-</section>
 
 <script>
+
+/* ================= FADE IN ================= */
 const faders = document.querySelectorAll('.fade');
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -556,7 +346,34 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 });
+
 faders.forEach(el => observer.observe(el));
+
+/* ================= SCROLLSPY ================= */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    const height = section.clientHeight;
+
+    if (scrollY >= top && scrollY < top + height) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+
 </script>
 
 </body>
