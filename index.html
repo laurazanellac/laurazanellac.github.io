@@ -111,6 +111,7 @@ nav a:hover {
 nav a.active {
   color: var(--accent);
   font-weight: 700;
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 /* ================= HERO ================= */
@@ -132,6 +133,23 @@ nav a.active {
 section {
   margin-bottom: var(--space-2xl);
   scroll-margin-top: 90px;
+}
+
+.publication-year {
+  margin-top: var(--space-xl);
+}
+
+.publication-year h3 {
+  margin-bottom: var(--space-md);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.publication-year + .publication-year {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-xl);
+  margin-top: var(--space-xl);
 }
 
 /* ================= CARDS ================= */
@@ -264,7 +282,7 @@ section {
   <img src="images/profile.jpg">
   <div>
     <h1>Laura Zanella</h1>
-    <p>Postdoctoral Researcher at <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris Saclay| NLP Research in Medical AI</p>
+    <p>Postdoctoral Researcher at <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris Saclay | NLP Research in Medical AI</p>
     <p>laura.zanella14[at]outlook.com</p>
     <p>
       <a href="https://github.com/laurazanellac">GitHub</a> |
@@ -485,38 +503,38 @@ section {
 <!-- PUBLICATIONS -->
 <section id="publications" class="fade">
   <h2>Publications</h2>
-   <ul>
-      <li><h2>2025</h2></li>
-    </ul>
-  <div class="card">
-    <h3><a href="https://arxiv.org/abs/2510.22395">Confabulations from ACL Publications (CAP): A Dataset for Scientific Hallucination Detection</a></h3>
-    <p>15th Language Resources and Evaluation Conference (LREC)</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://arxiv.org/abs/2506.19525">Automatic Posology Structuration: What role for LLMs?</a></h3>
-    <p>32nd MLP-LLM / CORIA-TALN</p>
-  </div>
- <div class="card">
-    <h3><a href="https://aclanthology.org/2025.jeptalnrecital-taln.28.pdf">Is Mistral’s Confidence Justified? Assessing Self-Evaluation in Biomedical QA</a></h3>
-    <p>32nd CORIA-TALN</p>
-  </div>
-  <ul>
-      <li><h2>2023</h2></li>
-    </ul>
-  <div class="card">
-    <h3><a href="https://aclanthology.org/2023.bionlp-1.12/">How Much do Knowledge Graphs Impact Transformer Models for Extracting Biomedical
-Events?</a></h3>
-    <p>61st Annual Meeting of the Association for Computational Linguistics (ACL)</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://hal.science/hal-04197974v1/file/FedCSIS_2023.pdf">Adding Linguistic Information to Transformer Models Improves Biomedical Event Detection?</a></h3>
-    <p>18th Conference on Computer Science and Intelligence Systems (FedCSIS)</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://hal.science/hal-03984783/document">Fine-tuning Pre-trained Transformer Language Models for Biomedical Event Trigger Detection</a></h3>
-    <p>DL4NLP - Extraction et Gestion de Connaissances (EGC)</p>
+
+  <div class="publication-year">
+    <h3>2025</h3>
+    <div class="card">
+      <h4><a href="https://arxiv.org/abs/2510.22395">Confabulations from ACL Publications (CAP): A Dataset for Scientific Hallucination Detection</a></h4>
+      <p>15th Language Resources and Evaluation Conference (LREC)</p>
+    </div>
+    <div class="card">
+      <h4><a href="https://arxiv.org/abs/2506.19525">Automatic Posology Structuration: What role for LLMs?</a></h4>
+      <p>32nd MLP-LLM / CORIA-TALN</p>
+    </div>
+    <div class="card">
+      <h4><a href="https://aclanthology.org/2025.jeptalnrecital-taln.28.pdf">Is Mistral’s Confidence Justified? Assessing Self-Evaluation in Biomedical QA</a></h4>
+      <p>32nd CORIA-TALN</p>
+    </div>
   </div>
 
+  <div class="publication-year">
+    <h3>2023</h3>
+    <div class="card">
+      <h4><a href="https://aclanthology.org/2023.bionlp-1.12/">How Much do Knowledge Graphs Impact Transformer Models for Extracting Biomedical Events?</a></h4>
+      <p>61st Annual Meeting of the Association for Computational Linguistics (ACL)</p>
+    </div>
+    <div class="card">
+      <h4><a href="https://hal.science/hal-04197974v1/file/FedCSIS_2023.pdf">Adding Linguistic Information to Transformer Models Improves Biomedical Event Detection?</a></h4>
+      <p>18th Conference on Computer Science and Intelligence Systems (FedCSIS)</p>
+    </div>
+    <div class="card">
+      <h4><a href="https://hal.science/hal-03984783/document">Fine-tuning Pre-trained Transformer Language Models for Biomedical Event Trigger Detection</a></h4>
+      <p>DL4NLP - Extraction et Gestion de Connaissances (EGC)</p>
+    </div>
+  </div>
 </section>
 
 <!-- ACTIVITIES -->
@@ -566,22 +584,28 @@ faders.forEach(el => observer.observe(el));
 
 const sectionLinks = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('section[id]');
+
+const setActiveLink = (id) => {
+  sectionLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+  });
+};
+
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    const id = entry.target.id;
-    const link = document.querySelector(`nav a[href="#${id}"]`);
-    if (!link) return;
-
-    if (entry.isIntersecting) {
-      sectionLinks.forEach(a => a.classList.remove('active'));
-      link.classList.add('active');
-    }
+    if (!entry.isIntersecting) return;
+    setActiveLink(entry.target.id);
   });
 }, {
-  rootMargin: '-45% 0px -55% 0px',
+  rootMargin: '-40% 0px -55% 0px',
   threshold: 0.1,
 });
+
 sections.forEach(section => sectionObserver.observe(section));
+
+if (!document.querySelector('nav a.active') && sectionLinks.length > 0) {
+  sectionLinks[0].classList.add('active');
+}
 </script>
 
 </body>
