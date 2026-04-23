@@ -87,6 +87,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.justified {
+    text-align: justify;
+  }
+
 /* ================= NAV ================= */
 
 nav {
@@ -342,18 +346,18 @@ section {
   <!-- ABOUT -->
   <section id="about" class="fade">
   <h2>About me</h2>
-  <p>
+  <p class="justified">
           I am currently a postdoctoral researcher at LISN (Université Paris-Saclay),
-          working on the evaluation and deployment of large language models for clinical applications.
+          working on the evaluation of LLMs for clinical applications.
         </p>
-  <p>
+  <p class="justified">
         My research lies at the intersection of Natural Language Processing and healthcare,
         with a focus on the extraction and structuring of clinical information from unstructured text,
         and on ensuring the reliability and trustworthiness of AI systems in real-world clinical applications.
       </p>
 
-      <p>
-        I am particularly interested in the evaluation of large language models in clinical contexts,
+      <p class="justified">
+        I am particularly interested in the evaluation of LLMs in clinical contexts,
         the design of robust benchmarks, and the development of methods that combine linguistic knowledge,
         statistical learning, and domain expertise.
       </p>
@@ -411,8 +415,8 @@ section {
       </p>
     </div>
   </div>
-    <h4>Description</h4>
-    <p  class="highlight"> This research investigates the use of LLMs for clinical text processing, with a particular focus on their applicability to information extraction and generation tasks. Key questions include how to effectively prompt LLMs for clinical applications, the role of external knowledge and contextual information, and the extent to which these models can be reliably deployed in practice. </p> <p> A central aspect of this work is the evaluation of LLM outputs: designing robust evaluation frameworks that combine quantitative metrics and qualitative analysis, exploring the use of LLMs as evaluators (LLM-as-a-judge), and addressing challenges related to calibration, uncertainty estimation, and bias. Particular attention is given to the construction of reliable ground truth data in clinical settings, where annotation is costly and inherently complex. </p>
+    <h4 >Description</h4>
+    <p  class="highlight justified"> This research investigates the use of LLMs for clinical text processing, with a particular focus on their applicability to information extraction and generation tasks. Key questions include how to effectively prompt LLMs for clinical applications, the role of external knowledge and contextual information, and the extent to which these models can be reliably deployed in practice. </p> <p> A central aspect of this work is the evaluation of LLM outputs: designing robust evaluation frameworks that combine quantitative metrics and qualitative analysis, exploring the use of LLMs as evaluators (LLM-as-a-judge), and addressing challenges related to calibration, uncertainty estimation, and bias. Particular attention is given to the construction of reliable ground truth data in clinical settings, where annotation is costly and inherently complex. </p>
 </div>
   
   <div class="card research-card">
@@ -454,7 +458,7 @@ section {
     </div>
   </div>
     <h4>Description</h4>
-    <p  class="highlight"> This line of research focuses on the extraction of structured information from biomedical and clinical texts, including tasks such as named entity recognition, relation extraction, and normalization to medical ontologies. It considers a variety of data sources, ranging from scientific literature to electronic health records and medical prescriptions, each with distinct linguistic and domain-specific challenges. </p> <p> The work explores the use of different modeling approaches, including transformer-based architectures, large language models, and knowledge graph integration. It also investigates the contribution of linguistic features—lexical, syntactic, and semantic—to improve extraction performance. A key objective is to better understand what types of information can be reliably extracted, under which conditions, and with what level of accuracy for downstream clinical use. </p>
+    <p  class="highlight justified"> This line of research focuses on the extraction of structured information from biomedical and clinical texts, including tasks such as named entity recognition, relation extraction, and normalization to medical ontologies. It considers a variety of data sources, ranging from scientific literature to electronic health records and medical prescriptions, each with distinct linguistic and domain-specific challenges. </p> <p> The work explores the use of different modeling approaches, including transformer-based architectures, large language models, and knowledge graph integration. It also investigates the contribution of linguistic features—lexical, syntactic, and semantic—to improve extraction performance. A key objective is to better understand what types of information can be reliably extracted, under which conditions, and with what level of accuracy for downstream clinical use. </p>
 </div>
 </section>
 
