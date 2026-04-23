@@ -9,6 +9,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* ================= DESIGN SYSTEM ================= */
+
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --text-secondary: #555555;
+  --muted: #888888;
+
+  --border: #eaeaea;
+  --surface: #fafafa;
+
+  --accent: #3b82f6;
+
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 70px;
+}
+
+/* ================= BASE ================= */
+
 html {
   scroll-behavior: smooth;
 }
@@ -18,37 +42,79 @@ body {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
-  color: #222;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
 }
 
-/* NAVBAR */
+/* ================= TYPOGRAPHY ================= */
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+p {
+  color: var(--text-secondary);
+  margin: 6px 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================= NAV ================= */
+
 nav {
   position: sticky;
   top: 0;
   background: white;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border);
   z-index: 100;
 }
 
 nav a {
-  margin-right: 20px;
-  text-decoration: none;
-  color: #444;
+  margin-right: var(--space-lg);
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
 nav a:hover {
-  color: black;
+  color: var(--text);
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 #hero {
   display: flex;
   align-items: center;
-  gap: 40px;
-  margin-top: 60px;
-  margin-bottom: 80px;
+  gap: var(--space-xl);
+  margin: var(--space-xl) 0 var(--space-2xl);
 }
 
 #hero img {
@@ -56,74 +122,71 @@ nav a:hover {
   border-radius: 50%;
 }
 
-#hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
+/* ================= SECTIONS ================= */
 
-/* SECTIONS */
 section {
-  margin-bottom: 60px;
+  margin-bottom: var(--space-2xl);
 }
 
-h2 {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
-}
+/* ================= CARDS ================= */
 
-/* CARDS */
 .card {
-  border: 1px solid #eee;
+  border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 20px;
-  margin-top: 15px;
-  transition: 0.3s;
+  padding: var(--space-lg);
+  margin-top: var(--space-md);
+  background: var(--bg);
+  transition: all 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
 }
 
+/* ================= RESEARCH ================= */
+
 .research-card .highlight {
+  margin: var(--space-sm) 0 var(--space-md);
   font-weight: 500;
-  margin: 10px 0 20px 0;
-  color: #333;
+  color: var(--text);
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: var(--space-md);
 }
 
-.grid h4 {
-  margin-bottom: 5px;
-  font-size: 0.95rem;
-  color: #555;
+/* ================= TAGS ================= */
+
+.tags {
+  margin-bottom: var(--space-md);
 }
 
-.grid p {
-  font-size: 0.95rem;
-  color: #444;
-}
-
-  .activity-card {
-  border-left: 3px solid #222;
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  background: #fafafa;
+.tags span {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 4px 6px 0 0;
+  border: 1px solid var(--border);
   border-radius: 6px;
-  transition: 0.2s;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: var(--surface);
 }
 
-.activity-card:hover {
-  background: #f2f2f2;
+/* ================= META ================= */
+
+.date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
 }
 
-.activity-header {
+.card-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: var(--space-xs);
 }
 
 .role {
@@ -133,13 +196,15 @@ h2 {
 
 .event {
   font-size: 0.85rem;
-  color: #777;
+  color: var(--muted);
 }
-/* ANIMATION */
+
+/* ================= ANIMATION ================= */
+
 .fade {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
 }
 
 .fade.visible {
@@ -147,14 +212,6 @@ h2 {
   transform: translateY(0);
 }
 
-.date {
-  color: #777;
-  font-size: 0.9rem;
-}
-
-ul {
-  padding-left: 20px;
-}
 </style>
 </head>
 
@@ -163,22 +220,20 @@ ul {
 <!-- NAV -->
 <nav>
   <a href="#about">About</a>
-  <a href="#research">Research Interests</a>
+  <a href="#research">Research</a>
   <a href="#experience">Experience</a>
   <a href="#publications">Publications</a>
-  <a href="#research_activities">Scientific Activities</a>
+  <a href="#research_activities">Activities</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <img src="images/profile.jpg" alt="Laura Zanella">
+  <img src="images/profile.jpg">
   <div>
     <h1>Laura Zanella</h1>
-    <p>Post-doctoral researcher at <a href="https://www.lisn.upsaclay.fr/">LISN</a></p> 
-    <p>
-      NLP Research in Medical AI
-    </p>
+    <p>Postdoctoral Researcher at <a href="https://www.lisn.upsaclay.fr/">LISN</a></p>
+    <p>NLP Research in Medical AI</p>
   </div>
 </section>
 
@@ -186,22 +241,21 @@ ul {
 <section id="about" class="fade">
   <h2>About</h2>
   <p>
-    My research lies at the intersection of Natural Language Processing and healthcare, with a focus on the extraction and structuring 
-    of clinical information from unstructured text, and on ensuring the reliability and trustworthiness of AI systems in real-world 
-    clinical applications.
+    My research lies at the intersection of Natural Language Processing and healthcare,
+    focusing on the extraction and structuring of clinical information from unstructured text,
+    and on ensuring the reliability of AI systems in real-world clinical applications.
   </p>
 </section>
 
-<!-- RESEARCH INTERESTS -->
+<!-- RESEARCH -->
 <section id="research" class="fade">
   <h2>Research Interests</h2>
-  
+
   <div class="tags">
     <span>Biomedical NLP | </span>
     <span>Information Extraction | </span>
-    <span>Generation of Clinical Text | </span>
-    <span>LLMs Evaluation</span>
-    <span></span>
+    <span>Clinical Text Generation | </span>
+    <span>LLM Evaluation</span>
   </div>
 
   <div class="card research-card">
@@ -284,6 +338,7 @@ ul {
     </div>
   </div>
 </div>
+</section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="fade">
@@ -364,36 +419,33 @@ Events?</a></h3>
   </div>
   <div class="card">
     <h3><a href="https://hal.science/hal-03984783/document">Fine-tuning Pre-trained Transformer Language Models for Biomedical Event Trigger Detection</a></h3>
-    <p></p>
+    <p>DL4NLP - Extraction et Gestion de Connaissances (EGC)</p>
   </div>
+
 </section>
 
-<!-- SCIENTIFIC ACTIVITIES -->
+<!-- ACTIVITIES -->
 <section id="research_activities" class="fade">
   <h2>Scientific Activities</h2>
 
-  <div class="activity-card">
-    <div class="activity-header">
+  <div class="card">
+    <div class="card-header">
       <span class="role">Co-organizer</span>
       <span class="event">CORIA-TALN 2026</span>
     </div>
-    <p>
-      <a href="https://atelier-tal-sante.github.io/">TAL@Santé Workshop</a>
-    </p>
+    <p> <a href="https://atelier-tal-sante.github.io/">TAL@Santé Workshop</a></p>
   </div>
 
-  <div class="activity-card">
-    <div class="activity-header">
+  <div class="card">
+    <div class="card-header">
       <span class="role">Co-organizer</span>
       <span class="event">CORIA-TALN 2025</span>
     </div>
-    <p>
-      <a href="https://atilf-umr7118.github.io/MLPLLM2025/">MLP-LLM Workshop</a>
-    </p>
+    <p><a href="https://atilf-umr7118.github.io/MLPLLM2025/">MLP-LLM Workshop</a></p>
   </div>
 
-  <div class="activity-card">
-    <div class="activity-header">
+  <div class="card">
+    <div class="card-header">
       <span class="role">Scientific Committee & Annotation</span>
       <span class="event">AACL-IJCNLP 2025</span>
     </div>
@@ -405,11 +457,11 @@ Events?</a></h3>
   </div>
 
 </section>
-  
+
 <!-- CONTACT -->
 <section id="contact" class="fade">
   <h2>Contact</h2>
-  <p>Email: laura.zanella14[at]outlook.com</p>
+  <p>laura.zanella14[at]outlook.com</p>
   <p>
     <a href="https://github.com/laurazanellac">GitHub</a> |
     <a href="https://scholar.google.com/citations?user=r0AX5YgAAAAJ&hl=en">Google Scholar</a> |
@@ -417,21 +469,16 @@ Events?</a></h3>
   </p>
 </section>
 
-<!-- ANIMATION SCRIPT -->
 <script>
 const faders = document.querySelectorAll('.fade');
-
-const appearOnScroll = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }
   });
 });
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
+faders.forEach(el => observer.observe(el));
 </script>
 
 </body>
