@@ -348,10 +348,10 @@ section {
   <h2>About me</h2>
   <p class="justified">
           I am currently a postdoctoral researcher at LISN (Université Paris-Saclay),
-          working on the evaluation of LLMs for clinical applications.
+          working on the evaluation of LLMs for clinical applications in the PARTAGES project.
         </p>
   <p class="justified">
-        My research lies at the intersection of Natural Language Processing and healthcare,
+        My research lies at the intersection of Natural Language Processing and health,
         with a focus on the extraction and structuring of clinical information from unstructured text,
         and on ensuring the reliability and trustworthiness of AI systems in real-world clinical applications.
       </p>
@@ -416,7 +416,12 @@ section {
     </div>
   </div>
     <h4 >Description</h4>
-    <p  class="highlight justified"> This research investigates the use of LLMs for clinical text processing, with a particular focus on their applicability to information extraction and generation tasks. Key questions include how to effectively prompt LLMs for clinical applications, the role of external knowledge and contextual information, and the extent to which these models can be reliably deployed in practice. </p> <p class="highlight justified"> A central aspect of this work is the evaluation of LLM outputs: designing robust evaluation frameworks that combine quantitative metrics and qualitative analysis, exploring the use of LLMs as evaluators (LLM-as-a-judge), and addressing challenges related to calibration, uncertainty estimation, and bias. Particular attention is given to the construction of reliable ground truth data in clinical settings, where annotation is costly and inherently complex. </p>
+    <p  class="highlight justified"> This research investigates the use of LLMs for clinical text processing, with a particular focus on their applicability to 
+      information extraction and generation tasks. Key questions include how to effectively prompt LLMs for clinical applications, the role of external knowledge 
+      and contextual information, and the extent to which these models can be reliably deployed in practice. </p> <p class="highlight justified"> A central aspect
+        of this work is the evaluation of LLM outputs: designing robust evaluation frameworks that combine quantitative metrics and qualitative analysis, exploring
+        the use of LLMs as evaluators (LLM-as-a-judge), and addressing challenges related to calibration, uncertainty estimation, and bias. Particular attention is
+        given to the construction of reliable ground truth data in clinical settings, where annotation is costly and inherently complex. </p>
 </div>
   
   <div class="card research-card">
@@ -458,7 +463,12 @@ section {
     </div>
   </div>
     <h4>Description</h4>
-    <p  class="highlight justified"> This line of research focuses on the extraction of structured information from biomedical and clinical texts, including tasks such as named entity recognition, relation extraction, and normalization to medical ontologies. It considers a variety of data sources, ranging from scientific literature to electronic health records and medical prescriptions, each with distinct linguistic and domain-specific challenges. </p> <p class="highlight justified"> The work explores the use of different modeling approaches, including transformer-based architectures, large language models, and knowledge graph integration. It also investigates the contribution of linguistic features—lexical, syntactic, and semantic—to improve extraction performance. A key objective is to better understand what types of information can be reliably extracted, under which conditions, and with what level of accuracy for downstream clinical use. </p>
+    <p  class="highlight justified"> This line of research focuses on the extraction of structured information from biomedical and clinical texts,
+      including tasks such as named entity recognition, relation extraction, and normalization to medical ontologies. It considers a variety of data sources, 
+      ranging from scientific literature to electronic health records and medical prescriptions, each with distinct linguistic and domain-specific challenges. 
+    </p> <p class="highlight justified"> The work explores the use of different modeling approaches, including transformer-based architectures, large language models, 
+      and knowledge graph integration. It also investigates the contribution of linguistic features (lexical, syntactic, and semantic) to improve extraction performance.
+      A key objective is to better understand what types of information can be reliably extracted, under which conditions, and with what level of accuracy for downstream clinical use. </p>
 </div>
 </section>
 
@@ -467,11 +477,11 @@ section {
   <h2>Professional Experience</h2>
 
   <div class="card">
-    <h3>Post-doctoral Researcher — <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris-Saclay</p> </h3>
+    <h3>Postdoctoral Researcher — <a href="https://www.lisn.upsaclay.fr/">LISN</a>, Paris-Saclay</p> </h3>
     <div class="date">04/2026 – current</div>
     <ul>
       <li>Participation in the <a href="https://www.health-data-hub.fr/actualites/democratiser-lia-generative-en-sante-letat-travers-france-2030-selectionne-le-projet">PARTAGES</a> project</li>
-      <li>LLM evaluation for different clinical use cases</li>
+      <li>LLM evaluation for different clinical use cases.</li>
     </ul>
   </div>
 
@@ -479,10 +489,10 @@ section {
     <h3>Data Scientist — Doctolib</h3>
     <div class="date">11/2025 – 03/2026</div>
     <ul>
-      <li>LLM evaluation for clinical summaries</li>
-      <li>Prompt engineering & A/B testing</li>
-      <li>Annotation campaigns for clinical data</li>
-      <li>Deployment on AWS, GCP, ArgoCD</li>
+      <li>Development and calibration of LLM evaluation scorers for clinical summaries</li>
+      <li>Prompt engineering for information extraction and structuration, and A/B testing</li>
+      <li>Guidelines design for annotation campaigns for clinical data</li>
+      <li>Deployment of LLM-based systems on AWS, GCP, ArgoCD</li>
     </ul>
   </div>
 
@@ -490,9 +500,9 @@ section {
     <h3>Data Scientist — Posos</h3>
     <div class="date">04/2024 – 05/2025</div>
     <ul>
-      <li>Fine-tuning transformer models for NER</li>
+      <li>Fine-tuning transformer models for biomedical NER</li>
       <li>Entity linking with medical terminologies (e.g. SNOMED, LOINC)</li>
-      <li>Production API for medical annotation</li>
+      <li>Development of production API for automatic medical annotation</li>
     </ul>
   </div>
 
@@ -500,7 +510,7 @@ section {
     <h3>PhD Researcher — <a href="https://www.loria.fr/en/">LORIA</a> (Université de Lorraine, CNRS, Inria)</h3>
     <div class="date">11/2019 – 12/2023</div>
     <ul>
-      <li>Domain: Natural Language Processing, Machine Learning, Biomedical Information Extraction</li>
+      <li>Domain: NLP, Biomedical Information Extraction, Transformers, Knowledge Graphs</li>
       <li>Thesis: <a href="https://theses.hal.science/tel-04516694v1"> Biomedical Event Extraction based on Transformers and Knowledge Graphs</a></li>
     </ul>
   </div>
@@ -564,15 +574,19 @@ section {
 
   <div class="publication-year">
     <h3>2025</h3>
-    
-      <h4><a href="https://arxiv.org/abs/2510.22395">Confabulations from ACL Publications (CAP): A Dataset for Scientific Hallucination Detection</a></h4>
+    <ul>
+      <li><h4><a href="https://arxiv.org/abs/2510.22395">Confabulations from ACL Publications (CAP): A Dataset for Scientific Hallucination Detection</a></h4></li>
+    </ul>
       <p>15th Language Resources and Evaluation Conference (LREC)</p>
   
-   
-      <h4><a href="https://arxiv.org/abs/2506.19525">Automatic Posology Structuration: What role for LLMs?</a></h4>
+    <ul>
+      <li><h4><a href="https://arxiv.org/abs/2506.19525">Automatic Posology Structuration: What role for LLMs?</a></h4></li>
+    </ul>
       <p>32nd MLP-LLM / CORIA-TALN</p>
-    
-      <h4><a href="https://aclanthology.org/2025.jeptalnrecital-taln.28.pdf">Is Mistral’s Confidence Justified? Assessing Self-Evaluation in Biomedical QA</a></h4>
+
+    <ul>
+      <li><h4><a href="https://aclanthology.org/2025.jeptalnrecital-taln.28.pdf">Is Mistral’s Confidence Justified? Assessing Self-Evaluation in Biomedical QA</a></h4></li>
+    </ul>
       <p>32nd CORIA-TALN</p>
     
   </div>
@@ -580,13 +594,19 @@ section {
   <div class="publication-year">
     <h3>2023</h3>
     
-      <h4><a href="https://aclanthology.org/2023.bionlp-1.12/">How Much do Knowledge Graphs Impact Transformer Models for Extracting Biomedical Events?</a></h4>
+    <ul>
+      <li><h4><a href="https://aclanthology.org/2023.bionlp-1.12/">How Much do Knowledge Graphs Impact Transformer Models for Extracting Biomedical Events?</a></h4></li>
+    </ul>
       <p>61st Annual Meeting of the Association for Computational Linguistics (ACL)</p>
-    
-      <h4><a href="https://hal.science/hal-04197974v1/file/FedCSIS_2023.pdf">Adding Linguistic Information to Transformer Models Improves Biomedical Event Detection?</a></h4>
+
+    <ul>
+      <li><h4><a href="https://hal.science/hal-04197974v1/file/FedCSIS_2023.pdf">Adding Linguistic Information to Transformer Models Improves Biomedical Event Detection?</a></h4></li>
+    </ul>
       <p>18th Conference on Computer Science and Intelligence Systems (FedCSIS)</p>
-    
-      <h4><a href="https://hal.science/hal-03984783/document">Fine-tuning Pre-trained Transformer Language Models for Biomedical Event Trigger Detection</a></h4>
+
+     <ul>
+      <li><h4><a href="https://hal.science/hal-03984783/document">Fine-tuning Pre-trained Transformer Language Models for Biomedical Event Trigger Detection</a></h4></li>
+    </ul>
       <p>DL4NLP - Extraction et Gestion de Connaissances (EGC)</p>
     
   </div>
@@ -619,7 +639,7 @@ section {
     </div>
     <p>
       <a href="https://aclanthology.org/2025.chomps-main.7.pdf">
-        SHROOM-CAP Shared Task
+        SHROOM-CAP: Shared Task on Hallucinations and Related Observable Overgeneration Mistakes in Crosslingual Analyses of Publication
       </a>
     </p>
   </div>
